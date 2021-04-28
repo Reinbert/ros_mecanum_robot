@@ -137,6 +137,9 @@ void setupSerial()
 
 void setupWifi()
 {
+  // Don't write Wifi config to EEPROM to extend its lifetime. 
+  WiFi.persistent(false);
+  
 #ifdef ACCESS_POINT_SSID
 
   WiFi.disconnect();
